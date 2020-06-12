@@ -3,19 +3,22 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
+    "inlineSourceMap": false,
+    "declaration": true,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
+    "module": "es2015",
     "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
+    "importHelpers": false,
+    "target": "es5",
     "lib": [
       "es2018",
       "dom"
     ]
   },
+  "exclude": [
+    "src/polyfills.ts"
+  ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true

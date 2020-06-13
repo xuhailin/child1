@@ -1,0 +1,16 @@
+:host .wrapper {
+    border: 1px solid yellow;
+    padding: 10px;
+    span {
+        border: 1px solid #000;
+        height: 32px;
+        display: block;
+        line-height: 32px;
+        margin: 8px;
+        cursor: pointer;
+        padding: 3px 8px;
+        &:hover {
+            background: #92dcf3;
+        }
+    }
+}

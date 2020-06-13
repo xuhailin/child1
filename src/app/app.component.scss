@@ -1,0 +1,7 @@
+:host .wrapper {
+    border: 1px solid red;
+    padding: 10px;
+    button + button {
+        margin-left: 10px;
+    }
+}

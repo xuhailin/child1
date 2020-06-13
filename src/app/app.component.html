@@ -1,1 +1,10 @@
-123
+<div class="wrapper">
+    <div>门诊主界面</div>
+    <button
+    (click)="navigateTo('list')">门诊医生站
+  </button>
+  <button
+  (click)="navigateTo('detail/abc')">门诊详情
+  </button>
+    <router-outlet name="outpatient"></router-outlet>
+  </div>

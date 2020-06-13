@@ -137,11 +137,25 @@ export class PatientListComponent implements OnInit {
 
 10. 引用到另一个文件中踩的坑，在container项目readme中说明
 
+
 参考链接
   https://martinfowler.com/articles/micro-frontends.html#Run-timeIntegrationViaJavascript
   https://medium.com/@patrick1729/how-to-create-angular-6-custom-elements-web-components-c88814dc6e0a
   https://www.techiediaries.com/angular/angular-9-web-components-custom-elements-shadow-dom/
   gulp： https://www.jonhuu.com/sample-post/1099.html
 
-继续：
-  - 路由调研
+11. 路由-路由到使用web组件内的某个子组件
+RouterModule.forRoot(routes)
+ 由于container模块也就是根模块中也使用了RouterModule.forRoot(routes)，
+ 所以会报错的，如果使用RouterModule.forChild 他也会不起作用，child1
+ 是比较独立的一个angular小项目，他不知道container里面有forRoot的
+
+  **所以推荐使用angular的MockLocationStrategy，它会模拟触发路由事件，但当我们导航到outpatient的detail时，他的路由也不会发生变化，这个也是需要处理下的。**
+   具体查看app-routing.module.ts
+
+参考链接：
+https://medium.com/@timon.grassl/how-to-use-routing-in-angular-web-components-c6a76449cdb
+
+ 12. **web components 名称不能是一个完整单词！！！ 比如outpatient错的  custom-outpatient才可以**
+
+ 13. 如果路径默认是path: '' 对应着list 那最终自定义的locationstrategy 就没办法获得outlet 路径可能不是正确的

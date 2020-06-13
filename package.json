@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "bpc": "npm run build && npm run pak2 && npm run cp",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -11,7 +12,8 @@
     "package": "gulp package",
     "pak1": "cat dist/child1/{runtime,polyfills,styles,main}.js | gzip > elements.js.gz",
     "serve1": "http-serve --gzip",
-    "pak2": "cat dist/child1/{runtime,polyfills,styles,main}.js > elements.js"
+    "pak2": "cat dist/child1/{runtime,polyfills,styles,main}.js > elements.js",
+    "cp": "cp elements.js ../container/src/assets/child1/elements.js"
   },
   "private": true,
   "dependencies": {

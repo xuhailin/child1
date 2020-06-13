@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-patient-list',
@@ -8,9 +9,14 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class PatientListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private elementRef: ElementRef) { }
 
   ngOnInit(): void {
+    console.log('patient-list onInit');
+  }
+
+  public navigateToDetail(visitCode: string): void {
+    this.router.navigate([{ outlets: { outpatient: `detail/${visitCode}`}}]);
   }
 
 }
